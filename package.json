@@ -1,0 +1,36 @@
+{
+  "name": "basic_js_stuff",
+  "version": "1.0.0",
+  "description": "Scratch pad for JS work",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jsonfile": "^6.0.1",
+    "moment": "^2.27.0",
+    "random": "^2.2.0",
+    "simple-git": "^2.17.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.6.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.0.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --ignore feedback.json server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrpgmr67/JS_stuff.git"
+  },
+  "author": "Michael Pomatto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrpgmr67/JS_stuff/issues"
+  },
+  "homepage": "https://github.com/mrpgmr67/JS_stuff#readme"
+}
