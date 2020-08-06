@@ -1,6 +1,8 @@
 const express = require('express');
 const path = require('path');
 const cookieSession = require('cookie-session');
+const createError = require('http-errors');
+const bodyParser = require('body-parser');
 
 const FeedbackService = require('./services/FeedbackService');
 const SpeakerService = require('./services/SpeakerService');
@@ -22,6 +24,8 @@ app.use(
     keys: ['dadridurl7i3', 'faielsxcvi212'],
   })
 );
+
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, './views'));
@@ -46,6 +50,19 @@ app.use(
     speakerService,
   })
 );
+
+app.use((request, response, next)=>{
+  return next(createError(404, 'File not Found'));
+});
+
+app.use((err, request, response, next) => {
+  response.locals.message = err.message;
+  console.log(err);
+  const status = err.status || 500;
+  response.locals.status = status;
+  response.status(status);
+  response.render('error');
+});
 
 app.listen(port, () => {
   // eslint-disable-next-line no-console
